@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sheppy Springer</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<!--
+<h1>Greeting Page</h1>
+<p>Enter your name here in order to receive a lovely personalised message</p>
+
+<form action="#" th:action="@{/greet}" th:object="${person}" method="post"> #person is the POJO youve exposed to the View, greet is the endpoint
+    <p>First Name: <input type="text" th:field="*{firstName}"></p> Field anmes must match PoJos field names#
+    <p>Last Name: <input type="text" th:field="*{lastName}"></p>
+    <p><input type="submit" value="Submit"/><input type="reset" value="Reset"/></p>
+</form>
+-->
+
+<h1>Add Person to H2 in-mem database</h1>
+<p>Enter the first name and surname of the person you wish to store</p>
+
+<form action="#" th:action="@{/greet}" th:object="${person}" method="post"> <!--person is the POJO youve exposed to the View, greet is the endpoint (@Controller)-->
+    <p>PPS Number: <input type="text" th:field="*{ppsNo}"></p>
+    <p>First Name: <input type="text" th:field="*{firstName}"></p> <!--Field names must match PoJos field names-->
+    <p>Last Name: <input type="text" th:field="*{lastName}"></p>
+    <p><input type="submit" value="Submit"/><input type="reset" value="Reset"/></p>
+
+</form>
+<form action="#" th:action="@{/delete}" th:object="${person}" method="post"> <!--person is the POJO youve exposed to the View, greet is the endpoint (@Controller)-->
+<p>PPS Number: <input type="text" th:field="*{ppsNo}"></p>
+<p>First Name: <input type="text" th:field="*{firstName}"></p> <!--Field names must match PoJos field names-->
+<p>Last Name: <input type="text" th:field="*{lastName}"></p>
+<p><input type="submit" value="Delete"/>
+</form>
+
+<form action="#" th:action="@{/read}" th:object="${person}" method="post"> <!--person is the POJO youve exposed to the View, greet is the endpoint (@Controller)-->
+    <p>PPS Number: <input type="text" th:field="*{ppsNo}"></p>
+    <p>First Name: <input type="text" th:field="*{firstName}"></p> <!--Field names must match PoJos field names-->
+    <p>Last Name: <input type="text" th:field="*{lastName}"></p>
+    <p><input type="submit" value="Read"/></p>
+</form>
+
+</body>
+</html>
